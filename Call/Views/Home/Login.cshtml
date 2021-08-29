@@ -1,0 +1,56 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .register {
+        background: lightgray;
+        width: 400px;
+        margin-top: 40px;
+        padding: 5px;
+        text-align: left;
+    }
+
+        .register .body {
+            padding: 4px;
+        }
+
+            .register .body div {
+                margin: 1px;
+            }
+
+            .register .body label {
+                width: 100px;
+            }
+
+            .register .body input {
+                width: 300px;
+                padding: 5px;
+                border: 1px solid lightgray;
+            }
+
+            .register .body button {
+                padding: 4px;
+                width: 80px;
+                margin: 4px;
+            }
+
+                .register .body button:first-of-type {
+                    margin-left: 100px;
+                }
+</style>
+<center>
+    <div class="register">
+        <div class="header"><h4>Sign in</h4></div>
+        <div class="body">
+            <form action="/Home/LoginCheck" method="post">
+                <div><label>user name</label><input type="text" name="name" placeholder="user name" /></div>
+                <div><label>password</label><input type="password" name="password" placeholder="password" /></div>
+                <div><button type="submit" >Sign in</button><button onclick="">Cancel</button></div>
+            </form>
+            
+        </div>
+    </div>
+</center>
