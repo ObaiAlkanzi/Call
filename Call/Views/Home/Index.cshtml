@@ -4,15 +4,30 @@
 <style>
     .users {
         margin-top: 40px;
-        width:500px;
+        width: 500px;
     }
-    .users table{
-        text-align:center;
+
+        .users table {
+            text-align: center;
+        }
+
+    .usersBar ul .newUser span {
+        padding: 6px;
+        background: brown;
+        float: right;
+        margin-top: 3px;
+        border-radius: 50%;
     }
-    .usersBar ul .newUser {
-        background: green;
+
+    .usersBar ul li span {
+        padding: 6px;
+        background: lightgray;
+        float: right;
+        margin-top: 3px;
+        border-radius: 50%;
     }
 </style>
+<h4 class="userId">@Session["Id"]</h4>
 <div class="row">
     <div class="col-lg-12">
 
@@ -28,34 +43,36 @@
     <script src="~/signalR/js" type="text/javascript"></script>
     <script src="~/Scripts/ChatApi.js" type="text/javascript"></script>
     <script>
-        var userId = @Session["Id"]
+        var userId = $(".userId").text();
+        $(".userId").hide();
+
         $.connection.hub.start()
             .done(function () {
-                chatApi.Users();
+                chatApi.Users(userId);
                 $.connection.usersHub.server.userLogin(userId);
                 $.connection.usersHub.server.onlineUsers();
             })
             .fail(function () { alert("failed to connect"); });
 
         $.connection.usersHub.client.newUser = function (data) {
-            $(".usersBar ul").append("<li class='newUser' id='" + data["Id"] + "'>" + data["Name"] + "</li>");
+            $(".usersBar ul").append("<li class='newUser' id='" + data["Id"] + "'>" + data["Name"] + "<span></span></li>");
             setTimeout(function () {
                 $(".usersBar ul li").removeAttr("class");
             }, 3000);
         }
 
         $.connection.usersHub.client.connectedUser = function (id) {
-            $("#" + id).css({"background":"lightgreen"});
+            $("#" + id + " span").css({ "background": "green" });
         }
 
         $.connection.serverHub.client.disconnected = function (id) {
-            $("#" + id).css({ "background": "#f5f5f5" });
+            $("#" + id + " span").css({ "background": "lightgray" });
         }
 
         $.connection.usersHub.client.onlineUsers = function (data) {
             for (var i in data) {
-                $("#" + data[i]).css({ "background": "lightgreen" });
-                
+                //alert(data[i]);
+                $("#" + data[i] + " span").css({ "background": "green" });
             }
         }
     </script>

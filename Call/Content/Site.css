@@ -6,8 +6,9 @@
 body {
     padding-top: 50px;
     padding-bottom: 20px;
-    font-family:Almarai;
-    padding-left:20px;
+    font-family: Almarai;
+    padding-left: 20px;
+    font-family: Almarai;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -56,7 +57,4 @@ textarea {
     cursor:default;
     padding:10px;
     font-weight:400;
-}
-.usersBar ul .newUser{
-    background:green;
 }

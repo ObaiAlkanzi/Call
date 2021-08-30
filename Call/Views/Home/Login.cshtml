@@ -4,13 +4,15 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<style>
+<style type="text/css">
+   
     .register {
         background: lightgray;
         width: 400px;
         margin-top: 40px;
         padding: 5px;
         text-align: left;
+        font-family: Almarai;
     }
 
         .register .body {
@@ -37,20 +39,42 @@
                 margin: 4px;
             }
 
-                .register .body button:first-of-type {
-                    margin-left: 100px;
-                }
+         .register .body button:first-of-type {
+               margin-left: 100px;
+         }
+         .notif{
+             padding:20px;
+             position:absolute;
+             margin-top:10px;
+             margin-left:130px;
+             background:rgba(137, 17, 17,.8);
+             color:white;
+             z-index:1000;
+         }
 </style>
 <center>
     <div class="register">
         <div class="header"><h4>Sign in</h4></div>
         <div class="body">
+            @try
+            {
+                if (Model.Header == "failed")
+                {
+                    <h4 class="notif bg-danger">@Model.Msg</h4>
+                    <script>setTimeout(function () { $(".notif").hide()},3000)</script>
+                }
+            }
+            catch (Exception e)
+            {
+                <h4 class="bg-danger"></h4>
+            }
+
             <form action="/Home/LoginCheck" method="post">
                 <div><label>user name</label><input type="text" name="name" placeholder="user name" /></div>
                 <div><label>password</label><input type="password" name="password" placeholder="password" /></div>
-                <div><button type="submit" >Sign in</button><button onclick="">Cancel</button></div>
+                <div><button type="submit">Sign in</button><button onclick="">Cancel</button></div>
             </form>
-            
+
         </div>
     </div>
 </center>

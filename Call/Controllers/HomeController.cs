@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using System.Data.SqlClient;
 using System.Configuration;
 using System.Data;
+using Call.Models;
 
 namespace Call.Controllers
 {
@@ -47,11 +48,11 @@ namespace Call.Controllers
                 return RedirectToAction(pointer, "Home");
             }
         }
-        public ActionResult Login()
+        public ActionResult Login(Notification noti)
         {
             if (Session["name"] == null || Session["password"] == null)
             {
-                return View();
+                return View(noti);
             }
             else
             {
@@ -107,7 +108,10 @@ namespace Call.Controllers
             }
             else
             {
-                return RedirectToAction("Login", "Home");
+                Notification noti = new Notification();
+                noti.Header = "failed";
+                noti.Msg = "invalid name or password";
+                return RedirectToAction("Login", "Home",noti);
             }
         }
 

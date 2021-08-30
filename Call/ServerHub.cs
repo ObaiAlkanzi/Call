@@ -12,8 +12,9 @@ namespace Call
     {
         public override Task OnDisconnected(bool stopCalled)
         {
-            var id = ConnectionsData.Ids[Context.ConnectionId];
+            string id = ConnectionsData.Ids[Context.ConnectionId];
             ConnectionsData.Ids.Remove(Context.ConnectionId);
+           
             Clients.Others.disconnected(id);
             return base.OnDisconnected(stopCalled);
         }
