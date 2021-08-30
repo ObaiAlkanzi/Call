@@ -10,7 +10,6 @@ namespace Call.Models
         //public static List<string> Ids = new List<string>();
         
         public static Dictionary<string, string> Ids = new Dictionary<string, string>();
-        //public static Dictionary<string, string> connIds = new Dictionary<string, string>();
 
     }
 }

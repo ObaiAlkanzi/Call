@@ -10,7 +10,13 @@ namespace Call
 {
     public class ServerHub:Hub
     {
-        
+        public override Task OnDisconnected(bool stopCalled)
+        {
+            var id = ConnectionsData.Ids[Context.ConnectionId];
+            ConnectionsData.Ids.Remove(Context.ConnectionId);
+            Clients.Others.disconnected(id);
+            return base.OnDisconnected(stopCalled);
+        }
 
     }
 }

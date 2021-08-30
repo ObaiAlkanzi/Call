@@ -9,9 +9,10 @@ using Call.Controllers.Api;
 
 namespace Call.hubs
 {
-    public class UsersHub:Hub
+    public class UsersHub : Hub
     {
         public UsersController userObj = new UsersController();
+    
 
         public void NewUser(Users user)
         {
@@ -24,7 +25,19 @@ namespace Call.hubs
             {
                 Clients.Client(Context.ConnectionId).newUser(false);
             }
-           
+
         }
+
+        public void userLogin(string id)
+        {
+            ConnectionsData.Ids.Add(Context.ConnectionId,id);
+            Clients.Others.connectedUser(id);
+        }
+        
+        public void OnlineUsers()
+        {
+            Clients.Client(Context.ConnectionId).onlineUsers(ConnectionsData.Ids);
+        }
+       
     }
 }

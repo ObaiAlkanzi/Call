@@ -22,8 +22,9 @@ function ChatApi() {
             for (var i in res) {
                 if (res[i].length > 0) {
                     for (var j in res[i]) {
-                        $(".usersBar ul").append("<li>"+res[i][j]["Name"]+"</li>");
+                        $(".usersBar ul").append("<li id='" + res[i][j]["Id"] +"'>"+res[i][j]["Name"]+"</li>");
                     }
+                    
                 } else {
                     $(".usersBar ul").append("<li>No Users</li>");
                 }
