@@ -11,5 +11,18 @@ namespace Call.Models
         
         public static Dictionary<string, string> Ids = new Dictionary<string, string>();
 
+        public static string GetKey(string value)
+        {
+            if (ConnectionsData.Ids.ContainsValue(value))
+            {
+                return "ok";
+            }
+            else
+            {
+                return "connection id not found";
+            }
+        }
     }
+
+    
 }

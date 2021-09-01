@@ -1,0 +1,212 @@
+﻿@font-face {
+    font-family: Almarai;
+    src: url(../fonts/Almarai/Almarai-Regular.ttf)format('truetype')
+}
+body {
+    font-family:Almarai;
+}
+.navbar{
+    background:#1a1f24;
+}
+.navbar li a{
+    color:white;
+}
+.navbar li a:hover{
+    color:#302d2d;
+}
+.navbar .bi{
+    font-size:24px;
+}
+.bi {
+    font-size: 27px;
+    margin-right: 5px;
+    margin-top: 8px;
+    padding: 3px;
+}
+.notif {
+    padding: 20px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    font-weight: 400;
+    position: absolute;
+    margin-top: 0px;
+    margin-left: 10px;
+    border-radius: 4px;
+    background: rgba(137, 17, 17,.7);
+    color: white;
+    z-index: 1000;
+}
+.navbar-toggle .icon-bar {
+    color: white;
+    background: white;
+}
+.userId {
+    display: none;
+}
+
+/*
+*Index and chat page style
+*/
+
+.usersBar, .rightbar {
+    background: white;
+    width: 200px;
+    position: absolute;
+    margin: 0px;
+    margin-top: 30px;
+    border: 1px solid lightgray;
+    padding: 0px;
+    font-family: Almarai;
+    z-index:990;
+}
+.usersBar ul,.rightbar ul{
+    list-style:none;
+    padding:0px;
+}
+.usersBar ul li,.rightbar ul li{
+    padding:7px;
+    padding-left:15px;
+    border-top:1px solid lightgray;
+    cursor:pointer;
+    color:#1a1f24;
+}
+
+.usersBar ul .newUser span {
+    padding: 6px;
+    background: brown;
+    float: right;
+    margin-top: 3px;
+    border-radius: 50%;
+}
+
+.usersBar ul li span {
+    padding: 4px;
+    background: lightgray;
+    float: right;
+    margin-top: 3px;
+    border-radius: 50%;
+}
+.usersBar ul li:first-of-type{
+    border:0px;
+    background:#fff;
+    color:#2b2929;
+    cursor:default;
+    padding:5px;
+    font-weight:400;
+}
+
+.usersBar ul li:first-of-type span:first-of-type,.rightbar ul li{
+    padding:0px;
+    background:transparent;
+    float:none;
+    margin:0px;
+    border-radius:0px;
+}
+.rightbar {
+    width: 40px;
+    padding: 0px;
+    margin: 0px;
+    margin-left: 90%;
+    margin-top: 30px;
+    background: rgba(26, 31, 36,1);
+}
+.rightbar ul{
+    padding:0px;
+}
+.rightbar ul li{
+    padding:4px;
+    width:auto;
+}
+.rightbar .bi{
+    padding:0px;
+    margin:0px;
+    font-size:25px;
+    color:white;
+}
+
+/*
+ * chat box
+*/
+.chatBar {
+    z-index: 900;
+    width: 300px;
+    position:fixed;
+    margin-left:16%;
+}
+.chatBox {
+    border: 1px solid lightgray;
+    width: 300px;
+    padding: 0px;
+    margin-left: 20%;
+    font-family: Almarai;
+}
+.chatBox .header{
+    background:#1a1f24;
+    color:white;
+    padding:1px;
+    padding-left:20px;
+}
+.chatBox .header h5{
+    font-family:Almarai;
+    font-size:17px;
+}
+.chatBox .body{
+    overflow-y:scroll;
+    height:360px;
+    padding:0px;
+    padding-top:10px;
+    margin:0px;
+    padding-right:10px;
+    background:white;
+}
+.chatBox .body ul{
+    list-style:none;
+}
+.chatBox .body ul li{
+    margin:3px;
+    padding:7px;
+    font-size:15px;
+    color:white;
+}
+.chatBox .body ul li div{ 
+    width:16px;
+    height:16px;
+    background:red;   
+    margin-top:-4px;
+    position:absolute;
+    transform:rotate(45deg);
+}
+
+.chatBox .body ul .sender{
+    background:#676262;
+    max-width:90%;
+    border-radius:0px;
+    padding-left:10px;
+}
+.chatBox .body ul .sender div{
+   margin-left:-18px;
+   background:#676262;
+}
+.chatBox .body ul .receiver{
+    background:#1a1f24;
+    color:white;
+    border-radius:0px;
+} 
+.chatBox .body ul .receiver div{
+    margin-left:210px;
+    background:#1a1f24;
+}
+.chatBox .chatFooter{
+    padding:0px;
+    margin:0px;
+    background:white;
+}
+.chatBox .chatFooter input{
+    padding:4px;
+    font-size:16px;
+    border:1px solid gray;
+    width:80%;
+}
+.chatBox .chatFooter button{
+    padding:5px;
+}

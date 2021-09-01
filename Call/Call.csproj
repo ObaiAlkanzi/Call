@@ -167,6 +167,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="hubs\ChatHub.cs" />
     <Compile Include="hubs\UsersHub.cs" />
     <Compile Include="Migrations\202108272205321_InitialMigration.cs" />
     <Compile Include="Migrations\202108272205321_InitialMigration.Designer.cs">
@@ -191,6 +192,8 @@
     <Content Include="App_Data\Call_log.ldf">
       <DependentUpon>Call.mdf</DependentUpon>
     </Content>
+    <Content Include="Content\Basics.css" />
+    <Content Include="Content\bootstrap-icons.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -206,6 +209,8 @@
     <Content Include="fonts\Almarai\Almarai-ExtraBold.ttf" />
     <Content Include="fonts\Almarai\Almarai-Light.ttf" />
     <Content Include="fonts\Almarai\Almarai-Regular.ttf" />
+    <Content Include="Content\fonts\bootstrap-icons.woff" />
+    <Content Include="Content\fonts\bootstrap-icons.woff2" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\ChatApi.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
@@ -220,6 +225,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\SignalR.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
