@@ -6,7 +6,7 @@ body {
     font-family:Almarai;
 }
 .navbar{
-    background:#1a1f24;
+    background:red;
 }
 .navbar li a{
     color:white;
@@ -124,89 +124,11 @@ body {
     color:white;
 }
 
-/*
- * chat box
-*/
-.chatBar {
-    z-index: 900;
-    width: 300px;
-    position:fixed;
-    margin-left:16%;
-}
-.chatBox {
-    border: 1px solid lightgray;
-    width: 300px;
-    padding: 0px;
-    margin-left: 20%;
-    font-family: Almarai;
-}
-.chatBox .header{
-    background:#1a1f24;
-    color:white;
-    padding:1px;
-    padding-left:20px;
-}
-.chatBox .header h5{
-    font-family:Almarai;
-    font-size:17px;
-}
-.chatBox .body{
-    overflow-y:scroll;
-    height:360px;
-    padding:0px;
-    padding-top:10px;
-    margin:0px;
-    padding-right:10px;
-    background:white;
-}
-.chatBox .body ul{
-    list-style:none;
-}
-.chatBox .body ul li{
-    margin:3px;
-    padding:7px;
-    font-size:15px;
+.connected{
+    background:#129407;
     color:white;
 }
-.chatBox .body ul li div{ 
-    width:16px;
-    height:16px;
-    background:red;   
-    margin-top:-4px;
-    position:absolute;
-    transform:rotate(45deg);
-}
-
-.chatBox .body ul .sender{
-    background:#676262;
-    max-width:90%;
-    border-radius:0px;
-    padding-left:10px;
-}
-.chatBox .body ul .sender div{
-   margin-left:-18px;
-   background:#676262;
-}
-.chatBox .body ul .receiver{
-    background:#1a1f24;
+.disconnected{
+    background:rgba(137, 17, 17,.7);
     color:white;
-    border-radius:0px;
-} 
-.chatBox .body ul .receiver div{
-    margin-left:210px;
-    background:#1a1f24;
-}
-.chatBox .chatFooter{
-    padding:0px;
-    margin:0px;
-    background:white;
-}
-.chatBox .chatFooter input{
-    padding:4px;
-    font-size:16px;
-    border:1px solid gray;
-    width:80%;
-}
-.chatBox .chatFooter button{
-    padding:5px;
 }

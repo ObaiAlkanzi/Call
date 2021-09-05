@@ -1,33 +1,51 @@
-﻿
+﻿/*
+ * [-] create signalR methods that generate connections.
+ * [1] server - login - send user id to check if already signed in , if n't will return list of users. else will send notification to current signed user.
+ * [2] client - unauthorised - receive a string array msg[2] , which Make a notification if another login happened from another device.
+ * [3] client - alreadyConnected - have to replace the location to login when login is not authorised.
+ * [4] client - login - which receieve dictionary of users and online users if the sign in process is success.
+ * [5] client - newClientConnection - receive new connected client data
+ * [6] client - disconnectedClient - if any user disconnected this method receive userId
+ */
 $.connection.hub.start()
     .done(function () {
-        chatApi.Users(userId);
-        $.connection.usersHub.server.userLogin(userId);
-        $.connection.usersHub.server.onlineUsers();
+        $.connection.mainHub.server.login(userId);
     })
-    .fail(function () { alert("failed to connect"); });
+    .fail(function () {
+        alert("failed to connect");
+    });
 
-$.connection.usersHub.client.newUser = function (data) {
-    $(".usersBar ul").append("<li class='newUser' id='" + data["Id"] + "'>" + data["Name"] + "<span></span></li>");
-    setTimeout(function () {
-        $(".usersBar ul li").removeAttr("class");
-    }, 3000);
+$.connection.mainHub.client.login = function (data) {
+    $.ajax({
+        url: '/Api/Users',
+        method: 'GET',
+        success: function (res) {
+            for (var i in res) {
+                for (var j in res[i]) {
+                    $(".usersBar ul").append("<li id='" + res[i][j]["Id"] + "' >" + res[i][j]["Name"] + "<span></span></li>");
+                }
+                for (var i in data) {
+                    $("#" + data[i]+" span").css({"background":"green"});
+                }
+                $("#" + userId).hide();
+            }
+        }
+    });
+    
 }
 
-$.connection.usersHub.client.connectedUser = function (id) {
-    $("#" + id + " span").css({ "background": "green" });
+$.connection.mainHub.client.newClientConnection = function (Id) {
+    $("#" + Id + " span").css({ "background": "green" });
 }
 
-$.connection.serverHub.client.disconnected = function (id) {
-    $("#" + id + " span").css({ "background": "lightgray" });
+$.connection.mainHub.client.disconnectedClient = function (Id) {
+    $("#" + Id + " span").css({"background":"brown"});
 }
 
-$.connection.usersHub.client.onlineUsers = function (data) {
-    for (var i in data) {
-        //alert(data[i]);
-        $("#" + data[i] + " span").css({ "background": "green" });
-    }
+$.connection.mainHub.client.unauotherisze = function (res) {
+    alert(res);
 }
-$.connection.chatHub.client.receive = function (sender,msg) {
-    $(".chatBox .body ul").append('<li class="receiver"><div></div><h5>' + msg + '</h5></li>');
+
+$.connection.mainHub.client.alreadyConnected = function () {
+    location.replace("/Home/Logout");
 }

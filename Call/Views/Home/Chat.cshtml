@@ -3,32 +3,10 @@
     ViewBag.Title = "Chat";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<style>
-    .users {
-        margin-top: 40px;
-        width: 500px;
-    }
+<table class="table table-responsive">
+    <tr><td>Connection Id</td><td>user id</td></tr>
+</table>
 
-        .users table {
-            text-align: center;
-        }
-
-    .usersBar ul .newUser span {
-        padding: 6px;
-        background: brown;
-        float: right;
-        margin-top: 3px;
-        border-radius: 50%;
-    }
-
-    .usersBar ul li span {
-        padding: 6px;
-        background: lightgray;
-        float: right;
-        margin-top: 3px;
-        border-radius: 50%;
-    }
-</style>
 <h4 class="userId">@Session["Id"]</h4>
 <div class="row">
     <div class="col-lg-12">
@@ -36,19 +14,43 @@
     </div>
     <div class="usersBar">
         <ul>
-            <li>Contacts</li>
+            <li><span class="bi bi-people"></span></li>
         </ul>
+    </div>
+    <div class="rightbar">
+        <ul>
+            <li onclick='alert(@Session["name"])'><span class="bi bi-person"></span></li>
+            <li onclick="alert(userId)"><span class="bi bi-mailbox"></span></li>
+        </ul>
+    </div>
+</div>
+
+<div class="navbar-fixed-bottom chatBar" style="display:none;">
+    <div class="chatBox">
+        <div class="header">
+            <h5>user name</h5>
+         <a></a>
+        </div>
+        <div class="body">
+            <ul>
+                <li class="sender"><div></div><h5>sender message</h5></li>
+                <li class="receiver"><div></div><h5>receiver message</h5></li>
+            </ul>
+        </div>
+        <hr />
+        <div class="chatFooter">
+            <input type="text" placeholder="message" id="MsgField" />
+            <button onclick="">send</button>
+        </div>
     </div>
 </div>
 @section scripts{
     <script src="~/Scripts/jquery.signalR-2.4.2.min.js" type="text/javascript"></script>
     <script src="~/signalR/js" type="text/javascript"></script>
-    <script src="~/Scripts/ChatApi.js" type="text/javascript"></script>
     <script>
         var userId = $(".userId").text();
-            //$(".userId").hide();
+                //$(".userId").hide();
 
     </script>
-
     <script src="~/Scripts/SignalR.js" type="text/javascript"></script>
 }

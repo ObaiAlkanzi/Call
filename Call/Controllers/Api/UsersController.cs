@@ -48,5 +48,16 @@ namespace Call.Controllers.Api
             conn.Close();
             return ds;
         }
+
+        [HttpGet]
+        public DataSet GetUsersById(int id)
+        {
+            conn.Open();
+            SqlDataAdapter query = new SqlDataAdapter(String.Format("select name from Users where id = {0}",id), conn);
+            DataSet ds = new DataSet();
+            query.Fill(ds);
+            conn.Close();
+            return ds;
+        }
     }
 }

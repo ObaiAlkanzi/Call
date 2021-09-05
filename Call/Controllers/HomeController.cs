@@ -89,6 +89,7 @@ namespace Call.Controllers
             DataTable dt = new DataTable();
             query.Fill(dt);
             if (dt.Rows.Count > 0) {
+                
                 Session["name"] = name;
                 Session["password"] = password;
                 Session["type"] = dt.Rows[0]["Type"].ToString();
@@ -96,8 +97,9 @@ namespace Call.Controllers
                 string pointer;
                 if (dt.Rows[0]["Type"].ToString().Equals("1"))
                 {
-                    pointer = "Chat";
-                    
+                    // pointer = "Chat";
+                    pointer = "Index";
+
                 }
                 else
                 {
