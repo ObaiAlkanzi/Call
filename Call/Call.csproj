@@ -177,9 +177,14 @@
     <Compile Include="Migrations\202108291333183_MessageMigration.Designer.cs">
       <DependentUpon>202108291333183_MessageMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202109071159464_UploadFileMigration.cs" />
+    <Compile Include="Migrations\202109071159464_UploadFileMigration.Designer.cs">
+      <DependentUpon>202109071159464_UploadFileMigration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ConnectionsData.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\LoginData.cs" />
     <Compile Include="Models\Messages.cs" />
     <Compile Include="Models\Notification.cs" />
     <Compile Include="Models\Users.cs" />
@@ -203,6 +208,12 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Profiles\IMG-20210704-WA0026.jpg" />
+    <Content Include="Profiles\IMG-20210730-WA0058.jpg" />
+    <Content Include="Profiles\obai.jpg" />
+    <Content Include="Profiles\WhatsApp Image 2021-08-10 at 10.12.08 PM.jpeg" />
+    <Content Include="Profiles\٢٠١٧٠٨٠٧_١٠٢١٥١.jpg" />
+    <Content Include="Scripts\Api.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="fonts\Almarai\Almarai-Bold.ttf" />
@@ -247,6 +258,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202108291333183_MessageMigration.resx">
       <DependentUpon>202108291333183_MessageMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202109071159464_UploadFileMigration.resx">
+      <DependentUpon>202109071159464_UploadFileMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

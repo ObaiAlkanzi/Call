@@ -22,10 +22,11 @@ $.connection.mainHub.client.login = function (data) {
         success: function (res) {
             for (var i in res) {
                 for (var j in res[i]) {
-                    $(".usersBar ul").append("<li id='" + res[i][j]["Id"] + "' >" + res[i][j]["Name"] + "<span></span></li>");
+                    $(".usersBar ul").append("<li id='" + res[i][j]["Id"] + "' onclick='api.chatWindow(" + res[i][j]["Id"] + ",\"" + res[i][j]["Name"] + "\",\"" + res[i][j]["Path"] + "\")' ><img src='\\Profiles\\" + res[i][j]["Path"] + "' />" + res[i][j]["Name"] + "<button value='0'>0</button><span>offline</span></li>");
                 }
                 for (var i in data) {
-                    $("#" + data[i]+" span").css({"background":"green"});
+                    $("#" + data[i] + " span").text("online");
+                    $("#" + data[i]+" span").css({"color":"green"});
                 }
                 $("#" + userId).hide();
             }
@@ -35,11 +36,13 @@ $.connection.mainHub.client.login = function (data) {
 }
 
 $.connection.mainHub.client.newClientConnection = function (Id) {
-    $("#" + Id + " span").css({ "background": "green" });
+    $("#" + Id + " span").text("online");
+    $("#" + Id + " span").css({ "color": "green" });
 }
 
 $.connection.mainHub.client.disconnectedClient = function (Id) {
-    $("#" + Id + " span").css({"background":"brown"});
+    $("#" + Id + " span").text("offline");
+    $("#" + Id + " span").css({ "color": "brown" });
 }
 
 $.connection.mainHub.client.unauotherisze = function (res) {
@@ -48,4 +51,10 @@ $.connection.mainHub.client.unauotherisze = function (res) {
 
 $.connection.mainHub.client.alreadyConnected = function () {
     location.replace("/Home/Logout");
+}
+
+
+$.connection.mainHub.client.receiveMsg = function (senderId,msg) {
+    var currentValue = $("#" + senderId + " button").val();
+    alert(currentValue);
 }

@@ -104,3 +104,4 @@ M:\obai\c#\Call\Call\bin\System.Net.Http.Formatting.xml
 M:\obai\c#\Call\Call\bin\System.Web.Http.xml
 M:\obai\c#\Call\Call\bin\System.Web.Http.WebHost.xml
 M:\obai\c#\Call\Call\obj\Debug\Call.Migrations.MessageMigration.resources
+M:\obai\c#\Call\Call\obj\Debug\Call.Migrations.UploadFileMigration.resources

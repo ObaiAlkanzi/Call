@@ -41,15 +41,19 @@
                 }
 </style>
 <center>
-    <div class="register">
-        <div class="header"><h4>Register user information</h4></div>
-        <div class="body">
-            <div><label>user name</label><input type="text" class="registerForm" placeholder="user name" /></div>
-            <div><label>gmail</label><input type="text" class="registerForm" placeholder="gmail" /></div>
-            <div><label>password</label><input type="password" class="registerForm" placeholder="password" /></div>
-            <div><label>confirm</label><input type="password" class="registerForm" placeholder="password" /></div>
-            <div><button onclick="api.register()">Sign up</button><button onclick="">Cancel</button></div>
-        </div>
+    <div class="register">      
+        <form action="/Home/NewUser/" method="post" enctype="multipart/form-data">
+            <div class="header"><h4>Register user information</h4></div>
+            <div class="body">
+                <div><label>user name</label><input type="text" name="Name" placeholder="user name" /></div>
+                <div><label>gmail</label><input type="text" name="Gmail" placeholder="gmail" /></div>
+                <div><label>password</label><input type="password" name="Password" placeholder="password" /></div>
+                <div>
+                    <label>Profile</label><input type="file" name="Profile" placeholder="Profile" />
+                </div>
+                <div><input type="submit" value="register" /><input type="reset" value="cancel" /></div>
+            </div>
+        </form>
     </div>
 </center>
 @section scripts{
@@ -61,7 +65,7 @@
             this.register = function () {
                 var tmp = document.getElementsByClassName("registerForm");
                 var data = { name: tmp[0].value, gmail: tmp[1].value, password: tmp[2].value, type: 1 };
-                $.connection.usersHub.server.newUser(data);
+               // $.connection.usersHub.server.newUser(data);
                // $.post("/Api/Users", data, function (res) { alert(res); });
 
             };

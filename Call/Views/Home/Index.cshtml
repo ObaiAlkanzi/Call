@@ -1,8 +1,37 @@
 ﻿@{
     ViewBag.Title = "Server";
 }
+<style>
+    .usersBar ul li span {
+        float: right;
+        padding: 0px;
+        background: white;
+        color:gray;
 
+        border-radius: 0px;
+        width: auto;
+        height: auto;
+    }
+    .usersBar ul li button {
+        margin-left: 3px;
+        border: 0px;
+        color: gray;
+        background: white;
+    }
+    .usersBar img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        margin: 5px;
+    }
+</style>
 <h4 class="userId">@Session["Id"]</h4>
+<!--
+<div class="notification">
+    <div class="head"><h4><span class="bi bi-messenger"></span>notification title</h4></div>
+    <div class="body">the body data</div>
+</div>
+-->
 <div class="row">
     <div class="col-lg-12">
 
@@ -20,16 +49,20 @@
     </div>
 </div>
 
-<div class="navbar-fixed-bottom chatBar" style="display:none;">
+
     <div class="chatBox">
         <div class="header">
-            <h5>user name</h5>
+            <h4><img src="~/Profiles/obai.jpg" /><span>user name</span></h4>
         </div>
         <div class="body">
-            <ul>
-                <li class="sender"><div></div><h5>sender message</h5></li>
-                <li class="receiver"><div></div><h5>receiver message</h5></li>
-            </ul>
+            <div class="receiver">
+                <h5>You:</h5>
+                <p>I will be hacker and I will not stop<span class="bi bi-check"></span></p>
+            </div>
+            <div class="sender">
+                <h5>Admin:</h5>
+                <p>I will be hacker and I will not stop<span class="bi bi-check-all"></span></p>
+            </div>
         </div>
         <hr />
         <div class="chatFooter">
@@ -37,14 +70,15 @@
             <button onclick="">send</button>
         </div>
     </div>
-</div>
+
 @section scripts{
     <script src="~/Scripts/jquery.signalR-2.4.2.min.js" type="text/javascript"></script>
     <script src="~/signalR/js" type="text/javascript"></script>
     <script>
         var userId = $(".userId").text();
                     //$(".userId").hide();
-
+        //$(".navbar").remove();
     </script>
     <script src="~/Scripts/SignalR.js" type="text/javascript"></script>
+    <script src="~/Scripts/Api.js" type="text/javascript"></script>
 }

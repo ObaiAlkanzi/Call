@@ -6,7 +6,8 @@ body {
     font-family:Almarai;
 }
 .navbar{
-    background:red;
+    background:white;
+    border-bottom:1px solid lightgray;
 }
 .navbar li a{
     color:white;
@@ -16,6 +17,7 @@ body {
 }
 .navbar .bi{
     font-size:24px;
+    color:black;
 }
 .bi {
     font-size: 27px;
@@ -37,8 +39,8 @@ body {
     z-index: 1000;
 }
 .navbar-toggle .icon-bar {
-    color: white;
-    background: white;
+    color: black;
+    background: black;
 }
 .userId {
     display: none;
@@ -78,13 +80,28 @@ body {
     margin-top: 3px;
     border-radius: 50%;
 }
-
 .usersBar ul li span {
-    padding: 4px;
-    background: lightgray;
     float: right;
-    margin-top: 3px;
+    padding: 0px;
+    background: white;
+    color: gray;
+    border-radius: 0px;
+    width: auto;
+    height: auto;
+}
+
+.usersBar ul li button {
+    margin-left: 3px;
+    border: 0px;
+    color: gray;
+    background: white;
+}
+
+.usersBar img {
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
+    margin: 5px;
 }
 .usersBar ul li:first-of-type{
     border:0px;
@@ -131,4 +148,112 @@ body {
 .disconnected{
     background:rgba(137, 17, 17,.7);
     color:white;
+}
+/*
+* chatBar
+*/
+ul{
+    list-style:none;
+    padding:0px;
+    margin:0px;
+
+}
+.chatBox {
+    position: absolute;
+    border: 1px solid #efefef;
+    width: 600px;
+    margin-left: 17%;
+    margin-top: 29px;
+    background: white;
+}
+.chatBox .header{
+    background:white;
+    padding:1px;
+    padding-left:4px;
+    border-bottom:1px solid lightgray;
+    margin:0px;
+}
+
+.chatBox .header img{
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    margin:1px;
+}
+.chatBox .header h4{
+    font-weight:500;
+    margin-left:4px;
+}
+.chatBox .header span{
+    font-size:20px;
+    margin-left:10px;
+    color:gray;
+}
+.chatBox .body{
+    height:300px;
+    margin:0px;
+    padding:2px 10px 0px 10px;
+    
+}
+.chatBox .body div{
+    width:auto;
+    margin-bottom:10px;
+}
+.chatBox .body p{
+    margin-top:-15px;
+    min-width:200px;
+}
+.chatBox .body .receiver p{
+    
+
+}
+.chatBox .body .sender p{
+    
+}
+.chatBox .body  span{
+    
+}
+.chatBox .chatFooter {
+    padding: 0px;
+    padding-bottom: 10px;
+    width: 600px;
+}
+.chatBox .chatFooter input{
+    width:800px;
+    padding:4px;
+}
+.chatBox .chatFooter button {
+    width: 50px;
+    border:1px solid lightgray;
+    background:#fcfcfc;
+    padding:4px;
+    font-weight:600;
+}
+/*
+ *notification style
+*/
+.notification {
+    border: 1px solid lightgray;
+    width: 400px;
+    position: absolute;
+    z-index: 1001;
+    background: rgba(255,255,255,.8);
+    margin-left: 30%;
+    margin-right: 30%;
+    margin-top: 30px;
+}
+
+.notification .head {
+    padding: 2px;
+    border-right: 1px solid gray;
+    border-left: 1px solid gray;
+    text-align:left;
+}
+.notification .head span{
+    
+}
+.notification .body {
+    padding: 5px;
+    margin-top: 8px;
+    max-height:150px;
 }

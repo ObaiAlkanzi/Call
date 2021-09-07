@@ -12,5 +12,7 @@ namespace Call.Models
         public string Gmail { get; set; }
         public string Password { get; set; }
         public string type { get; set; }
+        public string Path { get; set; }
+        public HttpPostedFileBase Profile { get; set; }
     }
 }
